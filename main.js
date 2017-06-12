@@ -78,18 +78,67 @@ var formData = [
   }
 ];
 
-var formNode = document.querySelector('signup');
-
 function createForm(){
-  var newForm = document.createElement('form');
-  newForm.setAttribute("action", "");
-  newForm.setAttribute("method", "post");
-  formNode.appendChild(newForm);
-  
+  var formNode = document.querySelector('.signup');
+  formNode.setAttribute("action", "");
+  formNode.setAttribute("method", "post");
+
+  var header = document.createElement('div');
+  header.className = "form-header";
+  formNode.appendChild(header);
+  var message = document.createElement('p');
+  message.textContent = "Sign Up For My Web App";
+  header.appendChild(message);
+
+  for (var i = 0; i < formData.length; i++) {
+    var input = formData[i];
+    var newInput;
+    var imgspan;
+    var inputDiv = document.createElement('div');
+    inputDiv.className = "input-div";
+    formNode.appendChild(inputDiv);
+    if (input.type == 'select'){
+      newInput = document.createElement('select');
+      newInput.setAttribute("id", input.id);
+      inputDiv.appendChild(newInput);
+      var newOption = document.createElement('option');
+      newOption.innerHTML = input.label;
+      newInput.appendChild(newOption);
+      for (var t = 0; t < input.options.length; t++) {
+        newOption = document.createElement('option');
+        newOption.setAttribute("value", input.options[t].value);
+        newOption.innerHTML = input.options[t].value;
+        newInput.appendChild(newOption);
+      }
+    } else if (input.type == 'textarea') {
+        imgspan = document.createElement('i');
+        imgspan.className = 'fa' + ' ' + input.icon;
+        inputDiv.appendChild(imgspan);
+        newInput = document.createElement('textarea');
+        newInput.setAttribute("placeholder", input.label);
+        newInput.setAttribute("id", input.id);
+        inputDiv.appendChild(newInput);
+    } else {
+        imgspan = document.createElement('i');
+        imgspan.className = 'fa' + ' ' + input.icon;
+        inputDiv.appendChild(imgspan);
+        newInput = document.createElement('input');
+        newInput.setAttribute("id", input.id);
+        newInput.setAttribute("type", input.type);
+        newInput.setAttribute("placeholder", input.label);
+        inputDiv.appendChild(newInput);
+    }
+
+  }
+  var footer = document.createElement('div');
+  footer.className = "form-footer";
+  formNode.appendChild(footer);
+  var button = document.createElement('button');
+  button.innerHTML = "Submit Form";
+  footer.appendChild(button);
+
 
 }
 
-for (var i = 0; i < formData.length; i++) {
-  var input = formData[i];
 
-}
+createForm();

@@ -2,4 +2,52 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  line-height: 2;
+}
+
+.signup{
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 60vh;
+  justify-content: center;
+  border: 2px gray solid;
+  margin-left: 40%;
+}
+
+.input-div{
+  width: 100%;
+}
+
+i{
+  display: inline-block;
+  height: 5%;
+  width: 5%;
+}
+
+.form-header{
+  background: #428BCA;
+  color: white;
+  height: 10%;
+  font-size: 25px;
+}
+
+p{
+  margin-left: 2%;
+}
+
+
+.form-footer{
+  background: #C9DEF0;
+  height: 10%;
+}
+
+button{
+  background: #428BCA;
+  color: white;
+  line-height: 2;
+  margin: 3% 0 2% 4%;
+  border: 0;
+  box-shadow: none;
+  padding: 1%;
 }
