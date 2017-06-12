@@ -16,13 +16,8 @@
 }
 
 .input-div{
+  display: flex;
   width: 100%;
-}
-
-i{
-  display: inline-block;
-  height: 5%;
-  width: 5%;
 }
 
 .form-header{

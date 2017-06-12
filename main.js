@@ -111,7 +111,7 @@ function createForm(){
         newInput.appendChild(newOption);
       }
     } else if (input.type == 'textarea') {
-        imgspan = document.createElement('i');
+        imgspan = document.createElement('span');
         imgspan.className = 'fa' + ' ' + input.icon;
         inputDiv.appendChild(imgspan);
         newInput = document.createElement('textarea');
@@ -119,7 +119,7 @@ function createForm(){
         newInput.setAttribute("id", input.id);
         inputDiv.appendChild(newInput);
     } else {
-        imgspan = document.createElement('i');
+        imgspan = document.createElement('span');
         imgspan.className = 'fa' + ' ' + input.icon;
         inputDiv.appendChild(imgspan);
         newInput = document.createElement('input');
